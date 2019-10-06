@@ -1,16 +1,11 @@
-let gulp = require('gulp');
-let plumber = require('gulp-plumber');
-let notify = require('gulp-notify');
-let pug = require('gulp-pug');
-let browserSync = require('browser-sync');
-let postcss = require('gulp-postcss');
-let postcssImport = require('postcss-import');
-let postcssCssnext = require('postcss-cssnext');
-let less = require('gulp-less');
-
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const postcss = require('gulp-postcss');
+const postcssImport = require('postcss-import');
+const postcssCssnext = require('postcss-cssnext');
+const less = require('gulp-less');
+const newer = require('gulp-newer');
 const del = require('del');
-
-// for image optimization
 const image = require('gulp-image');
 
 gulp.task('browser-sync', function(done) {
@@ -35,13 +30,14 @@ gulp.task("less", function(done){
       'src/css/*.less',
       '!src/css/_*.less',
     ])
-    .pipe(less())
+    .pipe(less({
+      strictMath: 'on'}))
     .pipe(postcss(processors))
     .on('error', function (err) {
             console.log(err.toString());
             this.emit('end');
         })
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('build/css'))
   done();
 });
 
@@ -51,17 +47,17 @@ gulp.task('csslibs', function(done) {
   done();
 });
 
-gulp.task('pug', function(done) {
-  return gulp.src(['src/*.pug', '!src/_*.pug'])
-    .pipe(plumber())
-    .pipe(pug({
-      pretty: true
-    }))
-    .on("error", notify.onError(function(error){
-        return "Message to the notifier: " + error.message;
-    }))
-    .pipe(gulp.dest('build'));
-  done();
+//------------------------------------------------------
+// HTML settings
+var htmlPath = {
+  src: 'src/**/*.html',
+  build: 'build/'
+};
+// HTML task
+gulp.task('html', () => {
+  return gulp.src(htmlPath.src)
+    .pipe(newer(htmlPath.build))
+    .pipe(gulp.dest(htmlPath.build))
 });
 
 gulp.task('fonts', function(done) {
@@ -84,7 +80,7 @@ gulp.task('js', function(done) {
 });
 
 gulp.task('watch', function(done) {
-  gulp.watch('src/*.pug', gulp.series('pug', reload));
+  gulp.watch('src/*.html', gulp.series('html', reload));
   gulp.watch('src/css/*.less', gulp.series('less', reload));
   gulp.watch('src/css/*.css', gulp.series('csslibs', reload));
   gulp.watch(['src/img/*', 'src/*.ico'], gulp.series('img', reload));
@@ -109,7 +105,5 @@ gulp.task('del', function(done) {
   done();
 });
 
-
-
-gulp.task('default', gulp.series('img', 'fonts', 'less', 'csslibs', 'js', 'pug', 'browser-sync', 'watch'));
-gulp.task('build', gulp.series('img', 'fonts', 'less', 'csslibs', 'js', 'pug', 'imagemin'));
+gulp.task('default', gulp.series('img', 'fonts', 'less', 'csslibs', 'js', 'html', 'browser-sync', 'watch'));
+gulp.task('build', gulp.series('img', 'fonts', 'less', 'csslibs', 'js', 'html', 'imagemin'));
