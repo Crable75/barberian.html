@@ -8,7 +8,7 @@
   right: 0;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.6);
   z-index: 1000;
 
   @media (min-width: 1000px) {
@@ -42,7 +42,7 @@
   &__divider {
     width: 168px;
     height: 1px;
-    background-color: #987355;
+    background-color: @main-color;
     margin-left: 35px;
     display: none;
 
@@ -70,10 +70,10 @@
   }
 
   &__book {
-    color: #987355;
+    color: @main-color;
     text-transform: uppercase;
     padding: 15px 30px;
-    border: 1px solid #987355;
+    border: 1px solid @main-color;
     line-height: 1;
     transition: all ease-in-out 300ms;
     cursor: pointer;

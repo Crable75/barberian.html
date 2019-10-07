@@ -4,16 +4,19 @@
   background-image: url(../img/founder-bg.png);
   background-repeat: no-repeat;
   background-position: bottom right;
-  display: grid;
-  grid-template-columns: 15px 1fr 15px;
-  grid-template-areas:
-    ". f-left-wrp ."
-    ". f-right-wrp .";
 
-  @media (min-width: 1000px) {
-    grid-template-columns: auto minmax(0px, 650px) minmax(0px, 485px) auto;
+  &__wrp {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "f-left-wrp"
+    "f-right-wrp";
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      ". f-left-wrp f-right-wrp .";
+      "f-left-wrp f-right-wrp";
+  }
 }
 
   &__left-wrp {
@@ -42,9 +45,12 @@
     font-weight: 500;
     font-size: 700px;
     line-height: 500px;
-    color: #987355;
-    padding-left: 100px;
+    color: @main-color;
     margin-bottom: 35px;
+  }
+
+  &__letter {
+    padding-left: 100px;
   }
 
   &__name {
@@ -91,7 +97,7 @@
   }
 
   &__btn {
-    background-color: #987355;
+    background-color: @main-color;
     color: #fff;
     font-family: 'Prata', serif;
     font-size: 12px;
@@ -116,7 +122,7 @@
     transition: all ease-in-out 200ms;
 
     &:hover {
-      color: #987355;
+      color: @main-color;
     }
   }
 
