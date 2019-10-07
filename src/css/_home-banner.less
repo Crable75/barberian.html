@@ -11,13 +11,41 @@
   &__social {
     color: #987355;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 45px;
+    flex: 1;
+    justify-content: center;
+    margin-left: auto;
   }
 
   &__social-title {
     font-size: 14px;
     line-height: 14px;
-    transform: rotate(90deg);
-    transform-origin: left top 0;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.63em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  &__social-divider {
+    width: 1px;
+    height: 65px;
+    background-color: #987355;
+    margin-bottom: 20px;
+  }
+
+  &__social-icon {
+    margin-bottom: 20px;
+    transition: all ease-in-out 300ms;
+    cursor: pointer;
+    font-size: 18px;
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   &__info {
