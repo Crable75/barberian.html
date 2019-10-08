@@ -1,28 +1,51 @@
 .price {
-  background-image: url(../img/price-section-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding-top: 100px;
-  padding-bottom: 100px;
+    background-image: url(../img/price-section-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
-  &__list {
-    color: #fff;
-    display: grid;
-    grid-template-columns: 1fr;
+    &__grid {
+        color: #fff;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 100px;
+        grid-row-gap: 35px;
 
-    @media (min-width: 1200px) {
-      grid-template-columns: 1fr 1fr;
+        @media (min-width: 800px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
     }
 
-  }
+    &__item-title-wrp {
+        display: flex;
+        justify-content: space-between;
+    }
 
-  &__item-title-wrp {
+    &__item-title {
+        font-family: 'Prata', serif;
+        text-transform: uppercase;
+    }
 
-  }
+    &__item-time {
+        border-bottom: 1px solid #fff;
+        position: relative;
+        bottom: 4px;
+        font-family: 'Prata', serif;
+        font-size: 12px;
+        line-height: 22px;
+        flex: 1;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
-  &__item-title {
-    font-family: 'Prata', serif;
-    text-transform: uppercase;
-  }
+    &__item-price {
+        font-size: 13px;
+        color: @main-color;
+        font-family: 'Prata', serif;
+        font-weight: 600;
+    }
 }

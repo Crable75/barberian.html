@@ -1,0 +1,153 @@
+.history {
+    padding-top: 150px;
+    padding-bottom: 200px;
+    background-image: url(../img/history-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 30px;
+
+        @media (min-width: 800px) {
+            grid-template-columns: 2fr 1fr 2fr;
+        }
+    }
+
+    &__txt-wrp {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 80px;
+    }
+
+    &__title {
+        color: #101520;
+        font-family: 'Prata', serif;
+        text-transform: uppercase;
+        font-size: 22px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    &__txt {
+        color: #989898;
+        margin-bottom: 20px;
+    }
+
+    &__nav-wrp {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-prev,
+    &__nav-next {
+        font-size: 13px;
+        color: @main-color;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all ease-in-out 300ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__nav-prev {
+        margin-right: 20px;
+    }
+
+    &__nav-divider {
+        width: 58px;
+        height: 1px;
+        background-color: @main-color;
+        margin-right: 20px;
+    }
+
+    &__slider {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__slider-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        height: 90px;
+        overflow: hidden;
+
+        &:hover .history__slider-year {
+            font-size: 32px;
+        }
+
+        &:hover .history__slider-title {
+            font-size: 12px;
+        }
+    }
+
+    &__slider-year {
+        font-family: 'Prata', serif;
+        font-size: 28px;
+        color: @main-color;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        transition: all ease-in-out 200ms;
+        margin-bottom: 10px;
+    }
+
+    &__slider-title {
+        font-family: 'Prata', serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: @main-color;
+        transition: all ease-in-out 200ms;
+    }
+
+    &__slider-up,
+    &__slider-down {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: @main-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    &__slider-up {
+        margin-bottom: 35px;
+    }
+
+    &__slider-down {
+        margin-top: 25px;
+    }
+
+    &__slider-icon {
+        color: #fff;
+        font-size: 21px;
+    }
+
+    &__photo-wrp {
+        padding-top: 80px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__photo-left {
+        margin-left: auto;
+    }
+
+    &__photo-right {
+        margin-top: 30px;
+        margin-left: 18px;
+    }
+
+}
