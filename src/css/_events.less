@@ -5,37 +5,62 @@
   background-size: contain;
   padding-top: 70px;
   padding-bottom: 70px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   &__grid {
     display: grid;
-    grid-template-columns: 45px minmax(0, 1fr) minmax(0, 568px) minmax(0, 568px) minmax(0, 1fr) 45px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 1500px) {
+      grid-template-columns: 45px minmax(0, 1fr) minmax(0, 568px) minmax(0, 568px) minmax(0, 1fr) 45px;
+    }
   }
 
   &__front-bg {
-    grid-row: 1/4;
-    grid-column: 2/5;
     width: 100%;
     height: auto;
     background-image: url(../img/events-bg-front.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    grid-row: 1/3;
+    grid-column: 1/2;
+
+    @media (min-width: 1500px) {
+      grid-row: 1/4;
+      grid-column: 2/5;
+    }
   }
 
   &__info-left {
-    grid-row: 1/4;
-    grid-column: 3/4;
-    padding-right: 100px;
-    padding-top: 180px;
-    padding-bottom: 210px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 50px 30px;
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    @media (min-width: 1500px) {
+      padding-right: 100px;
+      padding-top: 180px;
+      padding-bottom: 210px;
+      grid-row: 1/4;
+      grid-column: 3/4;
+    }
   }
 
   &__info-right {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
     grid-row: 2/3;
-    grid-column: 4/6;
+    grid-column: 1/2;
+
+    @media (min-width: 1500px) {
+      grid-row: 2/3;
+      grid-column: 4/6;
+    }
   }
 
   &__title {
@@ -48,7 +73,11 @@
 
   &__dscr {
     color: #fff;
-    margin-bottom: 120px;
+    margin-bottom: 40px;
+
+    @media (min-width: 1500px) {
+      margin-bottom: 120px;
+    }
   }
 
   &__date {
@@ -77,7 +106,11 @@
   }
 
   &__tag-wrp {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @media (min-width: 1500px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__tag-item {
@@ -102,6 +135,8 @@
   }
 
   &__event-img {
+    width: 100%;
+    height: auto;
     margin-bottom: 40px;
   }
 
@@ -113,7 +148,11 @@
     text-decoration: underline;
     text-decoration-style: dotted;
     transition: all ease-in-out 300ms;
-    margin-right: 35px;
+    margin-right: 15px;
+
+    @media (min-width: 1500px) {
+      margin-right: 35px;
+    }
 
     &:last-child {
       margin-right: 0;
