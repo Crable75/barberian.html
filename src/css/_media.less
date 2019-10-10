@@ -1,0 +1,48 @@
+.media {
+  padding-bottom: 195px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 345px) minmax(0, 445px) minmax(0, 345px);
+  }
+
+  &__img-follow {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 145px;
+    display: block;
+    z-index: 10;
+    max-width: 100%;
+  }
+
+  &__img-insta-wrp {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  &__img-insta {
+    display: block;
+    position: relative;
+    left: -40px;
+    max-width: 100%;
+  }
+
+  &__img-fb {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin-top: 115px;
+    display: block;
+    max-width: 100%;
+  }
+
+  &__img-pinterest {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 60px;
+    margin-left: auto;
+    display: block;
+    position: relative;
+    margin-right: -70px;
+    max-width: 100%;
+  }
+}
