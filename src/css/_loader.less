@@ -1,0 +1,27 @@
+.loader {
+    background-color: #1b1b1b;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__svg {
+
+    }
+
+    &__rect {
+        fill: none;
+        stroke-width: 100px;
+        stroke: @main-color;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 50%;
+        animation: animate 1.2s linear infinite;
+    }
+}
+
+@keyframes animate {
+    to {
+        stroke-dashoffset: 250%;
+    }
+}
