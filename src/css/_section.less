@@ -6,8 +6,12 @@
     align-items: center;
     padding-top: 50px;
     position: relative;
-    margin-bottom: 80px;
-    
+    margin-bottom: 50px;
+
+    @media (min-width: 800px) {
+      margin-bottom: 80px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -31,12 +35,16 @@
 
   &__title {
     font-family: 'Prata', serif;
-    font-size: 36px;
+    font-size: 26px;
     line-height: 1.4;
     text-transform: uppercase;
     text-align: center;
     color: #101520;
     margin-bottom: 20px;
+
+    @media (min-width: 600px) {
+      font-size: 36px;
+    }
     
     &--white {
       color: #fff;

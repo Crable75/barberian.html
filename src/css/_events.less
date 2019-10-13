@@ -1,66 +1,14 @@
 .events {
-  background-image: url(../img/events-bg.png);
-  background-position: center right;
+  background-image: url(../img/events-bg-front.jpg);
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  padding-left: 15px;
-  padding-right: 15px;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @media (min-width: 1500px) {
-      grid-template-columns: 45px minmax(0, 1fr) minmax(0, 568px) minmax(0, 568px) minmax(0, 1fr) 45px;
-    }
-  }
-
-  &__front-bg {
-    width: 100%;
-    height: auto;
-    background-image: url(../img/events-bg-front.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    grid-row: 1/3;
-    grid-column: 1/2;
-
-    @media (min-width: 1500px) {
-      grid-row: 1/4;
-      grid-column: 2/5;
-    }
-  }
-
-  &__info-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 50px 30px;
-    grid-row: 1/2;
-    grid-column: 1/2;
-
-    @media (min-width: 1500px) {
-      padding-right: 100px;
-      padding-top: 180px;
-      padding-bottom: 210px;
-      grid-row: 1/4;
-      grid-column: 3/4;
-    }
-  }
-
-  &__info-right {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    grid-row: 2/3;
-    grid-column: 1/2;
-
-    @media (min-width: 1500px) {
-      grid-row: 2/3;
-      grid-column: 4/6;
-    }
+  @media (min-width: 1200px) {
+    padding-top: 170px;
+    padding-bottom: 130px;
   }
 
   &__title {
@@ -75,12 +23,94 @@
     color: #fff;
     margin-bottom: 40px;
 
-    @media (min-width: 1500px) {
-      margin-bottom: 120px;
+    @media (min-width: 800px) {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  &__slider-item {
+    display: flex !important;
+    flex-direction: column;
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__slider-wrp {
+    position: relative;
+    padding-top: 60px;
+
+    @media (min-width: 1300px) {
+      padding-top: 0;
+    }
+  }
+
+  &__slider-left,
+  &__slider-right {
+    position: absolute;
+    color: @main-color;
+    font-size: 42px;
+    line-height: 1;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__slider-left {
+    top: 0;
+    left: 40%;
+    transform: translateX(-100px);
+
+    @media (min-width: 1300px) {
+      top: 50%;
+      left: auto;
+      transform: translateY(-50%);
+      right: calc(100% + 50px);
+    }
+  }
+
+  &__slider-right {
+    top: 0;
+    left: 40%;
+    transform: translateX(100px);
+
+    @media (min-width: 1300px) {
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 50px);
+    }
+  }
+
+  &__slider-wrp-left {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @media (min-width: 800px) {
+      width: 40%;
+    }
+  }
+
+  &__slider-wrp-right {
+    margin-bottom: 50px;
+
+    @media (min-width: 800px) {
+      width: 60%;
     }
   }
 
   &__date {
+    display: block;
     color: #fff;
     font-family: 'Prata', serif;
     line-height: 1;
@@ -88,7 +118,8 @@
     margin-bottom: 18px;
   }
 
-  &__event-type {
+  &__type {
+    display: block;
     color: #fff;
     font-family: 'Prata', serif;
     font-size: 14px;
@@ -97,7 +128,8 @@
     margin-bottom: 50px;
   }
 
-  &__event-title {
+  &__title {
+    display: block;
     color: #fff;
     font-family: 'Prata', serif;
     font-size: 22px;
@@ -107,13 +139,9 @@
 
   &__tag-wrp {
     margin-bottom: 30px;
-
-    @media (min-width: 1500px) {
-      margin-bottom: 50px;
-    }
   }
 
-  &__tag-item {
+  &__tag {
     color: #fff;
     font-family: 'Prata', serif;
     font-size: 10px;
@@ -134,7 +162,7 @@
     }
   }
 
-  &__event-img {
+  &__img {
     width: 100%;
     height: auto;
     margin-bottom: 40px;
