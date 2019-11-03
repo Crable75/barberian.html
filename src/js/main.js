@@ -100,7 +100,111 @@ $(function () {
         })
     }
 
+    // fadeInDown animation
+    if ($(".animation__fade-in-down").length) {
+        $(".animation__fade-in-down").each(function () {
+            let current_animation = $(this);
+            $(this).appear(function () {
+                setTimeout(function () {
+                    current_animation.addClass("fadeInDown animated").css('opacity', '1')
+                }, current_animation.data('delay'));
+            }, {accX: 0, accY: -150})
+        })
+    }
+
+    // fadeInRight animation
+    if ($(".animation__fade-in-right").length) {
+        $(".animation__fade-in-right").each(function () {
+            let current_animation = $(this);
+            $(this).appear(function () {
+                setTimeout(function () {
+                    current_animation.addClass("fadeInRight animated").css('opacity', '1')
+                }, current_animation.data('delay'));
+            }, {accX: 0, accY: -150})
+        })
+    }
+
+    // fadeIn animation
+    if ($(".animation__fade-in").length) {
+        $(".animation__fade-in").each(function () {
+            let current_animation = $(this);
+            $(this).appear(function () {
+                setTimeout(function () {
+                    current_animation.addClass("fadeIn animated").css('opacity', '1')
+                }, current_animation.data('delay'));
+            }, {accX: 0, accY: -150})
+        })
+    }
+
     //Parallax effects
-    $('.animation__parallax').parallax("50%", 0.1);
+    $('.home-banner').parallax("50%", 0.3);
+    $('.founder').parallax("50%", 0.1);
+    $('.price').parallax("50%", 0.1);
+    $('.footer').parallax("50%", 0.1);
+    $('.events').parallax("50%", 0.1, true);
+
+    // Homepage history slider buttons actions
+    $('.history__slider-item').on('click', function () {
+        let slider_item_clicked = $(this).data('id');
+
+        $('.history__txt-item--active').removeClass('history__txt-item--active');
+        $('.history__txt-item[data-id="' + slider_item_clicked + '"]').addClass('history__txt-item--active');
+
+        $('.history__photo--active').removeClass('history__photo--active');
+        $('.history__photo[data-id="' + slider_item_clicked + '"]').addClass('history__photo--active');
+    });
+
+    // Homepage history next button action
+    $('.history__nav-next').on('click', function () {
+        let data_id_values = $(".history__slider-item").map(function() {
+            return $(this).data('id');
+        }).get();//get all data values in an array
+        let highest_id_value = Math.max.apply(Math, data_id_values);
+
+        let next_index = $('.history__txt-item--active').data('id') + 1;
+        if (next_index > highest_id_value)
+        {
+            next_index = 1;
+        }
+
+        $('.history__txt-item--active').removeClass('history__txt-item--active');
+        $('.history__txt-item[data-id="' + next_index + '"]').addClass('history__txt-item--active');
+
+        $('.history__photo--active').removeClass('history__photo--active');
+        $('.history__photo[data-id="' + next_index + '"]').addClass('history__photo--active');
+
+    });
+
+    // Homepage history prev button action
+    $('.history__nav-prev').on('click', function () {
+        let data_id_values = $(".history__slider-item").map(function() {
+            return $(this).data('id');
+        }).get();//get all data values in an array
+        let highest_id_value = Math.max.apply(Math, data_id_values);
+
+        let prev_index = $('.history__txt-item--active').data('id') - 1;
+        if (prev_index < 1)
+        {
+            prev_index = highest_id_value;
+        }
+
+        $('.history__txt-item--active').removeClass('history__txt-item--active');
+        $('.history__txt-item[data-id="' + prev_index + '"]').addClass('history__txt-item--active');
+
+        $('.history__photo--active').removeClass('history__photo--active');
+        $('.history__photo[data-id="' + prev_index + '"]').addClass('history__photo--active');
+
+    });
+
+    // Homepage blog image click actions
+    $('.home-blog__center-img').on('click', function () {
+        let blog_item_clicked = $(this).data('id');
+
+        $('.home-blog__left-img--active').removeClass('home-blog__left-img--active');
+        $('.home-blog__left-img[data-id="' + blog_item_clicked + '"]').addClass('home-blog__left-img--active');
+
+        $('.home-blog__right-wrp--active').removeClass('home-blog__right-wrp--active');
+        $('.home-blog__right-wrp[data-id="' + blog_item_clicked + '"]').addClass('home-blog__right-wrp--active');
+    });
 
 });

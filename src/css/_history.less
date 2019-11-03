@@ -45,6 +45,14 @@
     }
   }
 
+  &__txt-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
   &__title {
     color: #101520;
     font-family: 'Prata', serif;
@@ -250,13 +258,17 @@
     }
   }
 
-  &__photo-left {
-    //margin-left: auto;
-  }
+  &__photo {
+    display: none;
 
-  &__photo-right {
-    margin-top: 30px;
-    margin-left: 18px;
+    &--right {
+      margin-top: 30px;
+      margin-left: 18px;
+    }
+
+    &--active {
+      display: block;
+    }
   }
 
 }

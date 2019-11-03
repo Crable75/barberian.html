@@ -2,17 +2,20 @@
 
   &__parallax {
     background-repeat: no-repeat;
-    background-position: center 0 !important;
-    background-attachment: scroll !important;
+    background-position: 50% 0;
+    background-attachment: fixed;
     background-size: cover;
 
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-      background-position: 0 0 !important;
+    @media (max-width: 1024px){
+      background-position: center !important;
       background-attachment: scroll !important;
     }
   }
 
-  &__fade-in-up {
+  &__fade-in-up,
+  &__fade-in-down,
+  &__fade-in-right,
+  &__fade-in {
     opacity: 0;
   }
 

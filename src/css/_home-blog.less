@@ -11,6 +11,7 @@
         display: grid;
         grid-template-columns: 1fr 160px;
         grid-template-rows: 1fr 1fr;
+        background-color: #151524;
 
         @media (min-width: 600px) {
             grid-template-columns: 1fr 80px 80px 1.5fr;
@@ -43,10 +44,11 @@
         height: auto;
         margin-bottom: 3px;
         cursor: pointer;
-        transition: all ease-in-out 300ms;
+        transition: all ease-in-out 400ms;
 
         &:hover {
             opacity: 0.7;
+            transform: scale(1.05, 1.05);
         }
 
         &:last-child {
@@ -66,7 +68,6 @@
 
 
     &__right-wrp {
-        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -75,11 +76,16 @@
         padding-right: 20px;
         grid-column: 1/3;
         grid-row: 2/3;
+        display: none;
 
         @media (min-width: 600px) {
             grid-column: 3/5;
             grid-row: 1/4;
             padding-left: 100px;
+        }
+
+        &--active {
+            display: flex;
         }
     }
 
@@ -109,5 +115,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: none;
+
+        &--active {
+            display: block;
+        }
     }
 }
