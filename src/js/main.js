@@ -55,6 +55,8 @@ $(function () {
             slidesToShow: 1,
             infinite: true,
             prevArrow: '.events__slider-left',
+            fade: true,
+            autoplay: true,
             nextArrow: '.events__slider-right'
         });
     }
