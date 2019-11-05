@@ -138,13 +138,6 @@ $(function () {
         })
     }
 
-    //Parallax effects
-    $('.home-banner').parallax("50%", 0.3);
-    $('.founder').parallax("50%", 0.1);
-    $('.price').parallax("50%", 0.1);
-    $('.footer').parallax("50%", 0.1);
-    $('.events').parallax("50%", 0.1, true);
-
     // Homepage history slider buttons actions
     $('.history__slider-item').on('click', function () {
         let slider_item_clicked = $(this).data('id');
