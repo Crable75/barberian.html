@@ -4,6 +4,12 @@ $(function () {
         $('body').addClass('loaded');
     });
 
+    AOS.init({
+        // once: true,
+        offset: 200,
+        duration: 800,
+    });
+
     // SHOW/HIDE menu on mobile
     if ($('.header__menu-btn').length) {
         $('.header__menu-btn').on('click', function () {
@@ -89,54 +95,6 @@ $(function () {
         }
         lastScroll = st;
     });
-
-    // fadeInUp animation
-    if ($(".animation__fade-in-up").length) {
-        $(".animation__fade-in-up").each(function () {
-            let current_animation = $(this);
-            $(this).appear(function () {
-                setTimeout(function () {
-                    current_animation.addClass("fadeInUp animated").css('opacity', '1')
-                }, current_animation.data('delay'));
-            }, {accX: 0, accY: -150})
-        })
-    }
-
-    // fadeInDown animation
-    if ($(".animation__fade-in-down").length) {
-        $(".animation__fade-in-down").each(function () {
-            let current_animation = $(this);
-            $(this).appear(function () {
-                setTimeout(function () {
-                    current_animation.addClass("fadeInDown animated").css('opacity', '1')
-                }, current_animation.data('delay'));
-            }, {accX: 0, accY: -150})
-        })
-    }
-
-    // fadeInRight animation
-    if ($(".animation__fade-in-right").length) {
-        $(".animation__fade-in-right").each(function () {
-            let current_animation = $(this);
-            $(this).appear(function () {
-                setTimeout(function () {
-                    current_animation.addClass("fadeInRight animated").css('opacity', '1')
-                }, current_animation.data('delay'));
-            }, {accX: 0, accY: -150})
-        })
-    }
-
-    // fadeIn animation
-    if ($(".animation__fade-in").length) {
-        $(".animation__fade-in").each(function () {
-            let current_animation = $(this);
-            $(this).appear(function () {
-                setTimeout(function () {
-                    current_animation.addClass("fadeIn animated").css('opacity', '1')
-                }, current_animation.data('delay'));
-            }, {accX: 0, accY: -150})
-        })
-    }
 
     // Homepage history slider buttons actions
     $('.history__slider-item').on('click', function () {
