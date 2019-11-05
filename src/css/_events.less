@@ -52,10 +52,11 @@
   &__slider-right {
     position: absolute;
     color: @main-color;
-    font-size: 42px;
+    font-size: 32px;
     line-height: 1;
     transition: all ease-in-out 0.3s;
     cursor: pointer;
+    z-index: 100;
     
     &:hover {
       color: #fff;
@@ -63,27 +64,30 @@
   }
 
   &__slider-left {
-    top: 0;
-    left: 40%;
-    transform: translateX(-100px);
+    bottom: 50px;
+    right: 70px;
 
     @media (min-width: 1300px) {
+      bottom: auto;
       top: 50%;
       left: auto;
       transform: translateY(-50%);
       right: calc(100% + 50px);
+      font-size: 42px;
     }
   }
 
   &__slider-right {
-    top: 0;
-    left: 40%;
-    transform: translateX(100px);
+    bottom: 50px;
+    right: 20px;
 
     @media (min-width: 1300px) {
+      bottom: auto;
+      right: auto;
       top: 50%;
       transform: translateY(-50%);
       left: calc(100% + 50px);
+      font-size: 42px;
     }
   }
 
