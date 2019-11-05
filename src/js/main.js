@@ -47,19 +47,26 @@ $(function () {
         });
     }
 
-    // Initialise EVENTS section slider
-    if ($('.events__slider').length) {
-        $('.events__slider').slick({
-            dots: false,
-            arrows: true,
-            slidesToShow: 1,
-            infinite: true,
-            prevArrow: '.events__slider-left',
-            fade: true,
-            autoplay: true,
-            nextArrow: '.events__slider-right'
-        });
-    }
+    let homeEventsSwiper = new Swiper ('.events__slider-wrp', {
+        // Optional parameters
+        loop: true,
+        autoplay: {
+            delay: 4000,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 1000,
+        navigation: {
+            nextEl: '.events__slider-right',
+            prevEl: '.events__slider-left',
+        },
+        pagination: {
+            el: '.events__slider-pagination',
+            type: 'fraction',
+        },
+    });
 
     // Add class fixed for menu when scroll
     let window_height = $(window).height();

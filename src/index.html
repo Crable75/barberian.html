@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/libs/font-awesome.min.css">
   <link rel="stylesheet" href="css/libs/animate.min.css">
   <link rel="stylesheet" href="css/libs/slick.css">
+  <link rel="stylesheet" href="css/libs/swiper.min.css">
   <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
@@ -415,11 +416,9 @@
   <div class="wrapper">
     <h2 class="events__title">Events</h2>
     <p class="events__dscr">Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididamco</p>
-    <div class="events__slider-wrp">
-      <div class="events__slider-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-      <div class="events__slider-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-      <div class="events__slider">
-        <div class="events__slider-item">
+    <div class="events__slider-wrp swiper-container">
+      <div class="events__slider swiper-wrapper">
+        <div class="events__slider-item swiper-slide">
           <div class="events__slider-wrp-left">
             <span class="events__date">30.08.19</span>
             <span class="events__type">Training</span>
@@ -441,7 +440,7 @@
             </div>
           </div>
         </div>
-        <div class="events__slider-item">
+        <div class="events__slider-item swiper-slide">
           <div class="events__slider-wrp-left">
             <span class="events__date">25.07.19</span>
             <span class="events__type">Masterclass</span>
@@ -463,7 +462,7 @@
             </div>
           </div>
         </div>
-        <div class="events__slider-item">
+        <div class="events__slider-item swiper-slide">
           <div class="events__slider-wrp-left">
             <span class="events__date">30.08.19</span>
             <span class="events__type">Training</span>
@@ -485,7 +484,7 @@
             </div>
           </div>
         </div>
-        <div class="events__slider-item">
+        <div class="events__slider-item swiper-slide">
           <div class="events__slider-wrp-left">
             <span class="events__date">25.07.19</span>
             <span class="events__type">Masterclass</span>
@@ -508,6 +507,9 @@
           </div>
         </div>
       </div>
+      <div class="events__slider-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+      <div class="events__slider-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+      <div class="events__slider-pagination"></div>
     </div>
   </div>
 </section>
@@ -598,6 +600,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/jquery.appear.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script src="js/jquery.parallax-1.1.3.js"></script>
 <script src="js/main.js"></script>
 </body>
