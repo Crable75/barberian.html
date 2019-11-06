@@ -17,6 +17,19 @@ $(function () {
         });
     }
 
+    // Initialise main-banner slider
+    if ($('.main-banner__slider').length) {
+        $('.main-banner__slider').slick({
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            infinite: true,
+            fade: true,
+            autoplay: true,
+            speed: 1000
+        });
+    }
+
     // Initialise HISTORY section slider
     if ($('.history__slider').length) {
         $('.history__slider').slick({
