@@ -80,6 +80,20 @@ $(function () {
         });
     }
 
+    // Initialise about masters section slider
+    if ($('.about-master__slider').length) {
+        $('.about-master__slider').slick({
+            vertical: true,
+            verticalSwiping: true,
+            dots: false,
+            arrows: false,
+            infinite: true,
+            centerMode: true,
+            centerPadding: '160px',
+            slidesToShow: 1,
+        });
+    }
+
     // Add class fixed for menu when scroll
     let window_height = $(window).height();
 
