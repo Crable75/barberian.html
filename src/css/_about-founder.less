@@ -7,30 +7,127 @@
 
     @media (min-width: 1200px) {
       grid-template-columns: 505px 580px 50px;
-      grid-template-rows: 170px 235px 520px;
+      grid-template-rows: 170px 235px auto;
     }
   }
 
-  &__photo {
+  &__photo-wrp {
     grid-column: 1/2;
     grid-row: 2/4;
+    margin-left: auto;
+    margin-bottom: auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: @main-color;
+      z-index: 10;
+      width: 1px;
+      height: 70px;
+      bottom: -35px;
+      right: 315px;
+
+    }
+
+    &::after {
+      content: "Quality work for you";
+      position: absolute;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 22px;
+      text-align: center;
+      color: #101520;
+      bottom: -90px;
+      right: 237px;
+      font-family: 'PT Sans Caption', sans-serif;
+      letter-spacing: 0.1em;
+      width: 140px;
+    }
   }
 
-  &__img {
+  &__img-wrp {
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 1/3;
+    margin-top: auto;
+    margin-left: 60px;
+    margin-bottom: 60px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: @main-color;
+      z-index: 10;
+      width: 70px;
+      height: 1px;
+      right: 100%;
+      top: 90px;
+
+    }
+
+    &::after {
+      content: "my favorite location";
+      position: absolute;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 22px;
+      text-align: center;
+      color: #101520;
+      top: 68px;
+      right: calc(100% + 70px);
+      font-family: 'PT Sans Caption', sans-serif;
+      letter-spacing: 0.1em;
+      width: 140px;
+    }
   }
 
   &__txt-wrp {
     grid-column: 2/3;
     grid-row: 3/4;
-    background-color: #9c795d;
+    background-color: rgba(156,121,93,0.95);
     color: #101520;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 65px;
     padding-right: 65px;
+    padding-bottom: 40px;
+    margin-left: -45px;
+    position: relative;
+  }
+
+  &__title-wrp {
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -15px;
+  }
+
+  &__pretitle,
+  &__title {
+    font-family: 'Prata', serif;
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+
+  &__txt {
+    margin-bottom: 35px;
+  }
+
+  &__signature {
+    margin-left: auto;
+  }
+
+  &__social-right {
+    grid-column: 3/4;
+    grid-row: 1/4;
+    display: flex;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    margin-left: auto;
   }
 
 }
