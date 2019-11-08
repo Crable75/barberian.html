@@ -74,23 +74,39 @@ $(function () {
             slidesToShow: 1,
             infinite: true,
             prevArrow: '.events__slider-left',
+            nextArrow: '.events__slider-right',
             fade: true,
             autoplay: true,
-            nextArrow: '.events__slider-right'
         });
     }
 
-    // Initialise about masters section slider
+    // Initialise about-masters section slider
     if ($('.about-master__slider').length) {
+        $('.about-master__slider')
+            .on('init', function(event, slick){
+                console.log(slick.slideCount);
+                $('.about-master__slider-total').html('/' + slick.slideCount);
+            })
+            .on('afterChange', function(event, slick, currentSlide, nextSlide){
+                let slideNumber = currentSlide + 1;
+
+                $('.about-master__number-slide').html(slideNumber);
+                $('.about-master__txt-item--active').removeClass('about-master__txt-item--active');
+                $('.about-master__txt-item[data-id="' + slideNumber + '"]').addClass('about-master__txt-item--active');
+                $('.about-master__slider-current').html(slideNumber);
+            });
+
         $('.about-master__slider').slick({
             vertical: true,
             verticalSwiping: true,
             dots: false,
-            arrows: false,
+            arrows: true,
             infinite: true,
             centerMode: true,
             centerPadding: '160px',
             slidesToShow: 1,
+            prevArrow: '.about-master__slider-left',
+            nextArrow: '.about-master__slider-right',
         });
     }
 

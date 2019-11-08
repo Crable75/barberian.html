@@ -1,0 +1,99 @@
+.newsletter {
+  background-color: #181725;
+  padding-top: 70px;
+  padding-bottom: 55px;
+
+  &__wrp {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  &__txt-wrp {
+    width: 45%;
+    padding-top: 85px;
+    padding-left: 75px;
+  }
+  
+  &__title {
+    font-family: 'Prata', serif;
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: #989898;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    max-width: 200px;
+    display: block;
+  }
+
+  &__img-wrp {
+    position: relative;
+  }
+
+  &__img-main {
+    border: 14px solid #fff;
+  }
+
+  &__img-right {
+    position: absolute;
+    right: -90px;
+    top: 65px;
+    border: 10px solid #fff;
+    transform: rotate(10deg);
+  }
+
+  &__img-left {
+    position: absolute;
+    right: -7px;
+    top: 33px;
+    border: 10px solid #fff;
+    transform: rotate(-6deg);
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #989898;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 12px;
+    color: #989898;
+    padding-bottom: 15px;
+    flex: 1;
+    margin-right: 40px;
+
+    &::placeholder {
+      font-family: 'PT Sans Caption', sans-serif;
+      font-size: 12px;
+      color: #989898;
+    }
+  }
+
+  &__submit {
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 35px;
+    background-color: @main-color;
+    border: none;
+    color: #fff;
+    font-family: 'Prata', serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+}

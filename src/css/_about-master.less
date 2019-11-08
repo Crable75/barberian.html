@@ -5,14 +5,25 @@
   &__wrp {
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
 
   &__txt-wrp {
     display: flex;
     flex-direction: column;
-    padding-right: 240px;
     padding-top: 130px;
+  }
+
+  &__txt-item {
+    display: none;
+    flex-direction: column;
+    padding-right: 240px;
     padding-bottom: 140px;
+    flex: 1;
+
+    &--active {
+      display: flex;
+    }
   }
 
   &__number {
@@ -66,13 +77,19 @@
   }
   
   &__slider-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #fff;
     padding: 15px 15px 25px 15px;
     margin-top: 30px;
     margin-bottom: 30px;
+    opacity: 0.6;
+    transition: opacity ease-in-out 0.5s;
+  }
+
+  .slick-active {
+
+    .about-master__slider-item {
+      opacity: 1;
+    }
   }
 
   &__slider-img {
@@ -80,22 +97,88 @@
   }
   
   &__slider-title {
+    display: block;
     font-family: 'Prata', serif;
     font-size: 12px;
     text-transform: uppercase;
     color: @main-color;
     letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  &__slider-left,
+  &__slider-right {
+    position: absolute;
+    color: @main-color;
+    font-size: 32px;
+    line-height: 1;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    z-index: 100;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__slider-left {
+    bottom: 50px;
+    right: 70px;
+
+    @media (min-width: 1300px) {
+      bottom: auto;
+      top: 50%;
+      left: auto;
+      transform: translateY(-50%);
+      right: calc(100% + 50px);
+      font-size: 42px;
+    }
+  }
+
+  &__slider-right {
+    bottom: 50px;
+    right: 20px;
+
+    @media (min-width: 1300px) {
+      bottom: auto;
+      right: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 50px);
+      font-size: 42px;
+    }
+  }
+  
+  &__slider-counter {
+    position: absolute;
+    top: 680px;
+    left: calc(100% + 50px);
+    color: #fff;
+    font-family: 'Prata', serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  &__slider-current {
+    color: @main-color;
   }
 
   &__social-wrp {
     margin-top: auto;
   }
-  
+
   &__social-link {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.1em;
     margin-right: 30px;
+    transition: all ease-in-out 200ms;
+
+    &:hover {
+      color: @main-color;
+    }
   }
+
+  
 }
