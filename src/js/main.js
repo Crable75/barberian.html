@@ -110,6 +110,21 @@ $(function () {
         });
     }
 
+    // Initialise services slider
+    if ($('.services__slider').length) {
+        $('.services__slider').slick({
+            dots: false,
+            arrows: true,
+            slidesToShow: 3,
+            infinite: true,
+            draggable: false,
+            speed: 700,
+            prevArrow: '.services__slider-left',
+            nextArrow: '.services__slider-right',
+
+        });
+    }
+
     // Add class fixed for menu when scroll
     let window_height = $(window).height();
 

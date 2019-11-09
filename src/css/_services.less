@@ -2,8 +2,12 @@
   padding-top: 245px;
   padding-bottom: 210px;
 
+  &__wrp {
+    display: flex;
+  }
+
   &__left-wrp {
-    max-width: 565px;
+    max-width: 50%;
     padding: 80px 40px 80px 40px;
     background-image: url(../img/services-bg.jpg);
     background-repeat: no-repeat;
@@ -12,6 +16,123 @@
   }
 
   &__right-wrp {
+    max-width: 50%;
+    position: relative;
+    padding-top: 300px;
+    padding-left: 70px;
+  }
+  
+  &__title {
+    font-family: 'Prata', serif;
+    color: @main-color;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
 
+  &__txt-wrp {
+    padding-right: 125px;
+  }
+  
+  &__txt {
+    color: #fff;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__left-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 28px;
+  }
+  
+  &__item-txt {
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-left: 15px;
+  }
+
+  &__slider-wrp {
+    width: 690px;
+    position: absolute;
+    left: -115px;
+    top: 20px;
+  }
+
+  &__slider-item {
+    padding: 20px 7px 20px 7px;
+    transition: all ease-in-out 0.7s;
+  }
+
+  .slick-current {
+
+    .services__slider-item {
+      display: block;
+      transform: scale(1.25);
+    }
+  }
+
+  &__slider-left,
+  &__slider-right {
+    position: absolute;
+    color: @main-color;
+    font-size: 40px;
+    line-height: 1;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    z-index: 100;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__slider-left {
+    display: none !important;
+  }
+
+  &__slider-right {
+    top: 220px;
+    left: -45px;
+    cursor: pointer;
+  }
+  
+  &__work-title {
+    font-family: 'Prata', serif;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    color: @main-color;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  &__work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 60px;
+    grid-column-gap: 45px;
+  }
+
+  &__work-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__work-number {
+    font-family: 'Prata', serif;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+  }
+
+  &__work-progress {
+    width: 100%;
+    height: 2px;
+    background-color: @main-color;
+    margin-bottom: 10px;
   }
 }
