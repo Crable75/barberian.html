@@ -1,0 +1,77 @@
+.leave-comment {
+
+  &__title  {
+    display: block;
+    font-family: 'Prata', serif;
+    font-size: 20px;
+    color: #101520;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__textarea {
+    border: 1px solid #ebebeb;
+    padding: 20px;
+    font-size: 12px;
+    color: #989898;
+    letter-spacing: 0.1em;
+    margin-bottom: 13px;
+
+    &::placeholder {
+      font-size: 12px;
+      color: #989898;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__input {
+    border: 1px solid #ebebeb;
+    line-height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+    color: #989898;
+    letter-spacing: 0.1em;
+    margin-bottom: 13px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::placeholder {
+      font-size: 12px;
+      color: #989898;
+      letter-spacing: 0.1em;
+    }
+
+    &--last {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    line-height: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    background-color: @main-color;
+    font-family: 'Prata', serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
