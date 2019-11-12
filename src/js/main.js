@@ -80,20 +80,6 @@ $(function () {
         });
     }
 
-    // Initialise gallery-feat section slider
-    if ($('.gallery-feat__slider').length) {
-        $('.gallery-feat__slider').slick({
-            // dots: false,
-            arrows: true,
-            slidesToShow: 2,
-            infinite: true,
-            // prevArrow: '.events__slider-left',
-            // nextArrow: '.events__slider-right',
-            // fade: true,
-            // autoplay: true,
-        });
-    }
-
     // Initialise about-masters section slider
     if ($('.about-master__slider').length) {
         $('.about-master__slider')
