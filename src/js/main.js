@@ -80,6 +80,7 @@ $(function () {
         });
     }
 
+
     // Initialise about-masters section slider
     if ($('.about-master__slider').length) {
         $('.about-master__slider')
