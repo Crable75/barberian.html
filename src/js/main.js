@@ -251,6 +251,36 @@ $(function () {
         $('.home-blog__right-wrp[data-id="' + blog_item_clicked + '"]').addClass('home-blog__right-wrp--active');
     });
 
+    // gallery-feat next button action
+    $('.gallery-feat__right').on('click', function () {
+        let data_id_values = $(".gallery-feat__wrp").map(function() {
+            return $(this).data('id');
+        }).get();//get all data values in an array
+        let highest_id_value = Math.max.apply(Math, data_id_values);
+
+        let next_index = $('.gallery-feat__wrp--active').data('id') + 1;
+        if (next_index > highest_id_value) next_index = 1;
+
+        $('.gallery-feat__wrp--active').removeClass('gallery-feat__wrp--active');
+        $('.gallery-feat__wrp[data-id="' + next_index + '"]').addClass('gallery-feat__wrp--active');
+
+    });
+
+    // gallery-feat prev button action
+    $('.gallery-feat__left').on('click', function () {
+        let data_id_values = $(".gallery-feat__wrp").map(function() {
+            return $(this).data('id');
+        }).get();//get all data values in an array
+        let highest_id_value = Math.max.apply(Math, data_id_values);
+
+        let next_index = $('.gallery-feat__wrp--active').data('id') - 1;
+        if (next_index < 1) next_index = highest_id_value;
+
+        $('.gallery-feat__wrp--active').removeClass('gallery-feat__wrp--active');
+        $('.gallery-feat__wrp[data-id="' + next_index + '"]').addClass('gallery-feat__wrp--active');
+
+    });
+
     // fadeInUp animation
     if ($(".animation__fade-in-up").length) {
         $(".animation__fade-in-up").each(function () {
