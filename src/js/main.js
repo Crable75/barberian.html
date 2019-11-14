@@ -72,9 +72,9 @@ $(function () {
             dots: false,
             arrows: true,
             slidesToShow: 1,
-            infinite: false,
-            prevArrow: '.events__slider-left',
-            nextArrow: '.events__slider-right',
+            infinite: true,
+            prevArrow: '.events__arrow--left',
+            nextArrow: '.events__arrow--right',
             fade: true,
             autoplay: true,
         });

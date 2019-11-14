@@ -82,7 +82,33 @@
     transition: all ease-in-out 300ms;
 
     &:hover {
-      opacity: 0.8;
+
+      &::before {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      &::after {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      margin-right: 10px;
+      content: '[';
+      transform: translateX(20px);
+    }
+
+    &::after {
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      margin-left: 10px;
+      content: ']';
+      transform: translateX(-20px);
     }
   }
 
@@ -180,7 +206,30 @@
     z-index: 10;
 
     &:hover {
-      opacity: 0.8;
+      background-color: rgba(152,115,85,1);
+      color: #fff;
+
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &::after {
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      content: '';
+      box-sizing: content-box;
+      top: -5px;
+      left: -5px;
+      padding: 5px;
+      box-shadow: 0 0 0 2px @main-color;
+      transition: transform 0.5s, opacity 0.5s;
+      transform: scale(0.8);
+      opacity: 0;
     }
   }
 
@@ -198,8 +247,13 @@
 
     &::before {
       content: "\f104";
+      font-size: 25px;
+      line-height: 1;
       font-family: FontAwesome;
       color: #fff;
+      position: absolute;
+      top: 4px;
+      left: 10px;
 
       @media (min-width: 1200px) {
         content: "\f106";
@@ -221,18 +275,18 @@
 
     &::before {
       content: "\f105";
+      font-size: 25px;
+      line-height: 1;
       font-family: FontAwesome;
       color: #fff;
+      position: absolute;
+      top: 6px;
+      left: 10px;
 
       @media (min-width: 1200px) {
         content: "\f107";
       }
     }
-  }
-
-  &__slider-icon {
-    color: #fff;
-    font-size: 21px;
   }
 
   &__photo-wrp {
