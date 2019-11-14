@@ -106,22 +106,8 @@
     text-align: center;
   }
 
-  &__slider-left,
-  &__slider-right {
+  &__arrow--left {
     position: absolute;
-    color: @main-color;
-    font-size: 32px;
-    line-height: 1;
-    transition: all ease-in-out 0.3s;
-    cursor: pointer;
-    z-index: 100;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-
-  &__slider-left {
     bottom: 50px;
     right: 70px;
 
@@ -131,11 +117,11 @@
       left: auto;
       transform: translateY(-50%);
       right: calc(100% + 50px);
-      font-size: 42px;
     }
   }
 
-  &__slider-right {
+  &__arrow--right {
+    position: absolute;
     bottom: 50px;
     right: 20px;
 
@@ -145,7 +131,6 @@
       top: 50%;
       transform: translateY(-50%);
       left: calc(100% + 50px);
-      font-size: 42px;
     }
   }
   
@@ -163,7 +148,7 @@
     color: @main-color;
   }
 
-  &__social-wrp {
+  &__social {
     margin-top: auto;
   }
 

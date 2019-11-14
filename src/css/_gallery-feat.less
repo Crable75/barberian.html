@@ -52,52 +52,8 @@
     }
   }
   
-  &__social-wrp {
-    margin-bottom: 45px;
-  }
-  
   &__social {
-    color: @main-color;
-    text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    margin-right: 25px;
-
-    &:hover {
-
-      &::before {
-        transform: translateX(0px);
-        opacity: 1;
-      }
-      &::after {
-        transform: translateX(0px);
-        opacity: 1;
-      }
-    }
-
-    &::before {
-      display: inline-block;
-      opacity: 0;
-      transition: transform 0.3s, opacity 0.2s;
-      margin-right: 10px;
-      content: '[';
-      transform: translateX(20px);
-    }
-
-    &::after {
-      display: inline-block;
-      opacity: 0;
-      transition: transform 0.3s, opacity 0.2s;
-      margin-left: 10px;
-      content: ']';
-      transform: translateX(-20px);
-    }
-
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-bottom: 45px;
   }
   
   &__txt {
@@ -138,68 +94,16 @@
     }
   }
 
-  &__left,
-  &__right {
+  &__arrow--left {
     position: absolute;
-    color: @main-color;
-    font-size: 32px;
-    line-height: 1;
-    background-color: rgba(152,115,85,0);
-    width: 46px;
-    height: 46px;
-    transition: background 0.2s, color 0.2s;
-    cursor: pointer;
-    border-radius: 50%;
-
-    &::after {
-      pointer-events: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      content: '';
-      box-sizing: content-box;
-      top: -5px;
-      left: -5px;
-      padding: 5px;
-      box-shadow: 0 0 0 2px @main-color;
-      transition: transform 0.5s, opacity 0.5s;
-      transform: scale(0.8);
-      opacity: 0;
-    }
-
-    &:hover {
-      background-color: rgba(152,115,85,1);
-      color: #fff;
-
-      &::after {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  }
-
-  &__left {
     left: 100px;
     top: 700px;
-
-    i {
-      position: absolute;
-      top: 6px;
-      left: 15px;
-      z-index: 30;
-    }
   }
 
-  &__right {
+  &__arrow--right {
+    position: absolute;
     right: 350px;
     top: 700px;
-
-    i {
-      position: absolute;
-      top: 6px;
-      right: 15px;
-      z-index: 30;
-    }
   }
+
 }

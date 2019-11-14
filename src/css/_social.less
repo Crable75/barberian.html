@@ -1,0 +1,50 @@
+.social {
+
+  &__item {
+    color: @main-color;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    margin-right: 25px;
+    
+    &--white {
+      color: #fff;
+    }
+
+    &:hover {
+
+      &::before {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      &::after {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      margin-right: 10px;
+      content: '[';
+      transform: translateX(20px);
+    }
+
+    &::after {
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      margin-left: 10px;
+      content: ']';
+      transform: translateX(-20px);
+    }
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

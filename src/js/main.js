@@ -99,8 +99,8 @@ $(function () {
             slidesToScroll: 1,
             arrows: true,
             focusOnSelect: true,
-            prevArrow: '.gallery-single__slider-left',
-            nextArrow: '.gallery-single__slider-right',
+            prevArrow: '.gallery-single__arrow--left',
+            nextArrow: '.gallery-single__arrow--right',
             responsive: [
                 {
                     breakpoint: 1000,
@@ -138,8 +138,8 @@ $(function () {
             centerMode: true,
             centerPadding: '160px',
             slidesToShow: 1,
-            prevArrow: '.about-master__slider-left',
-            nextArrow: '.about-master__slider-right',
+            prevArrow: '.about-master__arrow--left',
+            nextArrow: '.about-master__arrow--right',
         });
     }
 
@@ -152,6 +152,7 @@ $(function () {
             infinite: true,
             draggable: false,
             speed: 700,
+            focusOnSelect: true,
             prevArrow: '.services__slider-left',
             nextArrow: '.services__slider-right',
 
@@ -252,7 +253,7 @@ $(function () {
     });
 
     // gallery-feat next button action
-    $('.gallery-feat__right').on('click', function () {
+    $('.gallery-feat__arrow--right').on('click', function () {
         let data_id_values = $(".gallery-feat__wrp").map(function() {
             return $(this).data('id');
         }).get();//get all data values in an array
@@ -267,7 +268,7 @@ $(function () {
     });
 
     // gallery-feat prev button action
-    $('.gallery-feat__left').on('click', function () {
+    $('.gallery-feat__arrow--left').on('click', function () {
         let data_id_values = $(".gallery-feat__wrp").map(function() {
             return $(this).data('id');
         }).get();//get all data values in an array
