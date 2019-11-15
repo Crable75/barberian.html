@@ -47,6 +47,10 @@
     background-color: #fff;
     border-color: #fff;
     color: #101520;
+    background-image:linear-gradient(to top, rgba(152,115,85,0.6), rgba(152,115,85,0.6));
+    background-size: 0% 0%;
+    animation:right 3s ease-in-out forwards;
+    background-repeat:no-repeat;
   }
 
   &__title-wrp {
@@ -77,5 +81,15 @@
     text-align: center;
     font-size: 14px;
     line-height: 24px;
+  }
+}
+
+@keyframes right{
+  0%{
+    background-size:0% 100%;
+  }
+
+  100%{
+    background-size:100% 100%;
   }
 }

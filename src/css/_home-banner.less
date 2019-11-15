@@ -1,107 +1,125 @@
 .home-banner {
-    background-color: #1d1d1d;
-    height: 100vh;
+  background-color: #1d1d1d;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__social {
+    color: @main-color;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    padding-right: 45px;
+    flex: 1;
+    justify-content: center;
+    margin-left: auto;
+  }
 
-    &__social {
-        color: @main-color;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-right: 45px;
-        flex: 1;
-        justify-content: center;
-        margin-left: auto;
-    }
+  &__social-title {
+    font-size: 14px;
+    line-height: 14px;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.63em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
 
-    &__social-title {
-        font-size: 14px;
-        line-height: 14px;
-        writing-mode: vertical-lr;
-        letter-spacing: 0.63em;
-        text-transform: uppercase;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
+  &__social-divider {
+    width: 1px;
+    height: 65px;
+    background-color: @main-color;
+    margin-bottom: 20px;
+  }
 
-    &__social-divider {
-        width: 1px;
-        height: 65px;
-        background-color: @main-color;
-        margin-bottom: 20px;
-    }
+  &__social-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.15s;
+    cursor: pointer;
+    margin-bottom: 15px;
 
-    &__social-icon {
-        margin-bottom: 20px;
-        transition: all ease-in-out 300ms;
-        cursor: pointer;
-        font-size: 18px;
+    &:hover {
+      background-color: @main-color;
 
-        &:hover {
-            color: #fff;
-        }
-    }
-
-    &__info {
-        border-top: 1px solid #666;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        @media (min-width: 1000px) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-
-    &__info-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-
-        &--left {
-            border-right: 1px solid #666;
-        }
-
-        &--center {
-            @media (min-width: 1000px) {
-                border-right: 1px solid #666;
-            }
-        }
-
-        &--right {
-            grid-column: 1 / -1;
-
-            @media (min-width: 1000px) {
-                grid-column: auto;
-            }
-        }
-    }
-
-    &__info-title {
-        color: @main-color;
-        font-family: 'Prata', serif;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
-
-    &__info-txt {
+      .home-banner__social-icon {
         color: #fff;
-        font-family: 'Prata', serif;
-        font-size: 10px;
-        line-height: 22px;
-        text-align: center;
-        text-transform: uppercase;
-
-        &--phone {
-            font-size: 24px;
-            margin-top: 13px;
-            margin-bottom: 18px;
-        }
+      }
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-icon {
+    transition: all ease-in-out 0.15s;
+    font-size: 18px;
+  }
+
+  &__info {
+    border-top: 1px solid #666;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 1000px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &--left {
+      border-right: 1px solid #666;
+    }
+
+    &--center {
+      @media (min-width: 1000px) {
+        border-right: 1px solid #666;
+      }
+    }
+
+    &--right {
+      grid-column: 1 / -1;
+
+      @media (min-width: 1000px) {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &__info-title {
+    color: @main-color;
+    font-family: 'Prata', serif;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__info-txt {
+    color: #fff;
+    font-family: 'Prata', serif;
+    font-size: 10px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &--phone {
+      font-size: 24px;
+      margin-top: 13px;
+      margin-bottom: 18px;
+    }
+  }
 }

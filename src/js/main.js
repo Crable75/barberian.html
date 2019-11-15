@@ -26,7 +26,8 @@ $(function () {
             infinite: true,
             fade: true,
             autoplay: true,
-            speed: 1000
+            speed: 1000,
+            autoplaySpeed: 3000
         });
     }
 
@@ -329,5 +330,17 @@ $(function () {
             }, {accX: 0, accY: -150})
         })
     }
+
+
+    $('.Count').each(function () {
+        var $this = $(this);
+        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
+                $this.text(Math.ceil(this.Counter));
+            }
+        });
+    })
 
 });
