@@ -1,25 +1,57 @@
 .about-master {
-  margin-left: 45px;
-  margin-right: 45px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  //TODO проверить паддинги во всех блоках для мобильной версии и выставить одинаковые во всем шаблоне
+
+  @media (min-width: 800px) {
+    padding: 0;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
 
   &__wrp {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
     position: relative;
+    align-items: center;
+
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__txt-wrp {
     display: flex;
     flex-direction: column;
-    padding-top: 130px;
+    position: relative;
+
+    @media (min-width: 1200px) {
+      padding-top: 130px;
+    }
+
+    @media (min-width: 1500px) {
+      position: static;
+    }
   }
 
   &__txt-item {
     display: none;
     flex-direction: column;
-    padding-right: 240px;
-    padding-bottom: 140px;
     flex: 1;
+
+    @media (min-width: 800px) {
+      padding-right: 100px;
+    }
+
+    @media (min-width: 1200px) {
+      padding-right: 240px;
+      padding-bottom: 140px;
+    }
 
     &--active {
       display: flex;
@@ -108,10 +140,14 @@
 
   &__arrow--left {
     position: absolute;
-    bottom: 50px;
-    right: 70px;
+    top: 0;
+    right: 150px;
 
-    @media (min-width: 1300px) {
+    @media (min-width: 1200px) {
+      top: 130px;
+    }
+
+    @media (min-width: 1500px) {
       bottom: auto;
       top: 50%;
       left: auto;
@@ -122,10 +158,14 @@
 
   &__arrow--right {
     position: absolute;
-    bottom: 50px;
-    right: 20px;
+    top: 0;
+    right: 50px;
 
-    @media (min-width: 1300px) {
+    @media (min-width: 1200px) {
+      top: 130px;
+    }
+
+    @media (min-width: 1500px) {
       bottom: auto;
       right: auto;
       top: 50%;
@@ -136,12 +176,21 @@
   
   &__slider-counter {
     position: absolute;
-    top: 680px;
-    left: calc(100% + 50px);
+    top: 12px;
+    right: 107px;
     color: #fff;
     font-family: 'Prata', serif;
     font-size: 16px;
     letter-spacing: 0.1em;
+
+    @media (min-width: 1200px) {
+      top: 142px;
+    }
+
+    @media (min-width: 1500px) {
+      top: 680px;
+      left: calc(100% + 50px);
+    }
   }
 
   &__slider-current {
@@ -149,7 +198,7 @@
   }
 
   &__social {
-    margin-top: auto;
+    margin-top: 50px;
   }
 
   &__social-link {

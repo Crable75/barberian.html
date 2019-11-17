@@ -66,38 +66,25 @@
   &__slider-item {
     padding: 20px 7px 20px 7px;
     transition: all ease-in-out 0.7s;
+    transform: scale(0.85);
   }
 
   .slick-current {
 
     .services__slider-item {
       display: block;
-      transform: scale(1.25);
+      transform: scale(1.2);
     }
   }
 
-  &__slider-left,
-  &__slider-right {
-    position: absolute;
-    color: @main-color;
-    font-size: 40px;
-    line-height: 1;
-    transition: all ease-in-out 0.3s;
-    cursor: pointer;
-    z-index: 100;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-
-  &__slider-left {
+  &__arrow--left {
     display: none !important;
   }
 
-  &__slider-right {
-    top: 220px;
-    left: -45px;
+  &__arrow--right {
+    position: absolute;
+    top: 240px;
+    left: -80px;
     cursor: pointer;
   }
   
@@ -130,9 +117,10 @@
   }
 
   &__work-progress {
-    width: 100%;
+    width: 0%;
     height: 2px;
     background-color: @main-color;
     margin-bottom: 10px;
+    transition: all ease-in-out 1s;
   }
 }

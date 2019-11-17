@@ -21,7 +21,7 @@
 <header class="header">
   <img src="img/header-logo.png" alt="" class="header__logo">
   <ul class="mobile-menu">
-    <li class="mobile-menu__item"><a class="mobile-menu__link mobile-menu__link--active" href="/">Home</a></li>
+    <li class="mobile-menu__item"><a class="mobile-menu__link mobile-menu__link--active" href="">Home</a></li>
     <li class="mobile-menu__item"><a class="mobile-menu__link" href="about.html">About</a></li>
     <li class="mobile-menu__item"><a class="mobile-menu__link" href="blog.html">Blog</a></li>
     <li class="mobile-menu__item"><a class="mobile-menu__link" href="gallery.html">Gallery</a></li>
@@ -29,7 +29,7 @@
     <li class="mobile-menu__item mobile-menu__item--book"><a class="mobile-menu__link" href="#">Book me</a></li>
   </ul>
   <ul class="main-menu">
-    <li class="main-menu__item"><a class="main-menu__link main-menu__link--active" href="/">Home</a></li>
+    <li class="main-menu__item"><a class="main-menu__link main-menu__link--active" href="">Home</a></li>
     <li class="main-menu__item"><a class="main-menu__link" href="about.html">About</a></li>
     <li class="main-menu__item"><a class="main-menu__link" href="blog.html">Blog</a></li>
     <li class="main-menu__item"><a class="main-menu__link" href="gallery.html">Gallery</a></li>
@@ -89,9 +89,9 @@
         <a href="#" class="btn">Contact us</a>
       </div>
       <div class="founder__social-right">
-        <a href="#" class="founder__social-link">Inst</a>
-        <a href="#" class="founder__social-link">Tw</a>
-        <a href="#" class="founder__social-link">Fb</a>
+        <a href="#" class="founder__social-link animation__bounce" data-delay="3000">Inst</a>
+        <a href="#" class="founder__social-link animation__bounce" data-delay="3500">Tw</a>
+        <a href="#" class="founder__social-link animation__bounce" data-delay="4000">Fb</a>
         <span class="founder__social-since">Since 2010</span>
       </div>
     </div>
@@ -298,7 +298,7 @@
   </div>
 </section>
 <div class="home-gallery">
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-down">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -309,7 +309,7 @@
     </div>
     <img src="img/home-gallery-01.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-down">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -320,7 +320,7 @@
     </div>
     <img src="img/home-gallery-02.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item home-gallery__item--long">
+  <div class="home-gallery__item home-gallery__item--long" data-aos="flip-left">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -331,7 +331,7 @@
     </div>
     <img src="img/home-gallery-03.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-down">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -342,7 +342,7 @@
     </div>
     <img src="img/home-gallery-04.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-up">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -353,7 +353,7 @@
     </div>
     <img src="img/home-gallery-05.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-up">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -364,7 +364,7 @@
     </div>
     <img src="img/home-gallery-06.jpg" alt="" class="home-gallery__item-img">
   </div>
-  <div class="home-gallery__item">
+  <div class="home-gallery__item" data-aos="zoom-in-up">
     <div class="home-gallery__item-cover">
       <div class="home-gallery__item-title-wrp">
         <div class="home-gallery__item-txt-wrp">
@@ -416,7 +416,7 @@
     </div>
   </div>
 </section>
-<section class="events jarallax" data-jarallax data-speed="0.2">
+<section class="events jarallax" data-jarallax data-speed="0.2" data-aos="zoom-in">
   <img class="jarallax-img" src="img/events-bg-front.jpg" alt="">
   <div class="wrapper">
     <h2 class="events__title">Events</h2>
@@ -525,16 +525,16 @@
     <span class="section__subtitle">Lorem ipsum dolor sit amet, consectcaseeretur adipisicing elit, sed do eiusmod</span>
   </div>
   <div class="media__grid wrapper">
-    <div class="media__wrp media__wrp-follow">
+    <div class="media__wrp media__wrp-follow" data-aos="fade-right" data-aos-duration="1000">
       <img src="img/media-img-01.jpg" alt="" class="media__img media__img--no-hover">
     </div>
-    <a href="#" class="media__wrp media__wrp-insta">
+    <a href="#" class="media__wrp media__wrp-insta" data-aos="fade-down" data-aos-duration="1000">
       <img src="img/media-img-02.jpg" alt="" class="media__img">
     </a>
-    <a href="#" class="media__wrp media__wrp-pin">
+    <a href="#" class="media__wrp media__wrp-pin" data-aos="fade-up" data-aos-duration="1000">
       <img src="img/media-img-04.jpg" alt="" class="media__img">
     </a>
-    <a href="#" class="media__wrp media__wrp-fb">
+    <a href="#" class="media__wrp media__wrp-fb" data-aos="fade-left" data-aos-duration="1000">
       <img src="img/media-img-03.jpg" alt="" class="media__img">
     </a>
   </div>

@@ -5,9 +5,9 @@ $(function () {
     });
 
     AOS.init({
-        // once: true,
         offset: 200,
-        duration: 800,
+        duration: 1000,
+        once: true,
     });
 
     // SHOW/HIDE menu on mobile
@@ -16,6 +16,35 @@ $(function () {
             $('.header').toggleClass('header--show');
         });
     }
+
+    // Add class fixed for menu when scroll
+    let window_height = $(window).height();
+
+    $(window).on('scroll load', function (event) {
+        if ($(window).scrollTop() > window_height) {
+            $('.header').addClass('header--fixed');
+        } else {
+            $('.header').removeClass('header--fixed').removeClass('header--hide');
+        }
+    });
+
+    // Show menu when scroll up, hide menu when scroll down
+    let lastScroll = 50;
+    $(window).on('scroll load', function (event) {
+        let st = $(this).scrollTop();
+        if (st > lastScroll) {
+            $('.header').addClass('header--hide');
+        } else if (st < lastScroll) {
+            $('.header').removeClass('header--hide');
+        }
+
+        if ($(window).scrollTop() <= 200) {
+            $('.header').removeClass('.header--fixed').removeClass('header--hide');
+        } else if ($(window).scrollTop() < window_height && $(window).scrollTop() > 0) {
+            $('.header').addClass('header--hide');
+        }
+        lastScroll = st;
+    });
 
     // Initialise main-banner slider
     if ($('.main-banner__slider').length) {
@@ -131,16 +160,26 @@ $(function () {
             });
 
         $('.about-master__slider').slick({
-            vertical: true,
+            centerMode: true,
             verticalSwiping: true,
+            centerPadding: '160px',
+            vertical: true,
             dots: false,
             arrows: true,
             infinite: true,
-            centerMode: true,
-            centerPadding: '160px',
             slidesToShow: 1,
             prevArrow: '.about-master__arrow--left',
             nextArrow: '.about-master__arrow--right',
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        centerMode: false,
+                        verticalSwiping: false,
+                        vertical: false,
+                    }
+                }
+            ]
         });
     }
 
@@ -154,40 +193,11 @@ $(function () {
             draggable: false,
             speed: 700,
             focusOnSelect: true,
-            prevArrow: '.services__slider-left',
-            nextArrow: '.services__slider-right',
+            prevArrow: '.services__arrow--left',
+            nextArrow: '.services__arrow--right',
 
         });
     }
-
-    // Add class fixed for menu when scroll
-    let window_height = $(window).height();
-
-    $(window).on('scroll load', function (event) {
-        if ($(window).scrollTop() > window_height) {
-            $('.header').addClass('header--fixed');
-        } else {
-            $('.header').removeClass('header--fixed').removeClass('header--hide');
-        }
-    });
-
-    // Show menu when scroll up, hide menu when scroll down
-    let lastScroll = 50;
-    $(window).on('scroll load', function (event) {
-        let st = $(this).scrollTop();
-        if (st > lastScroll) {
-            $('.header').addClass('header--hide');
-        } else if (st < lastScroll) {
-            $('.header').removeClass('header--hide');
-        }
-
-        if ($(window).scrollTop() <= 200) {
-            $('.header').removeClass('.header--fixed').removeClass('header--hide');
-        } else if ($(window).scrollTop() < window_height && $(window).scrollTop() > 0) {
-            $('.header').addClass('header--hide');
-        }
-        lastScroll = st;
-    });
 
     // Homepage history slider buttons actions
     $('.history__slider-item').on('click', function () {
@@ -322,25 +332,57 @@ $(function () {
     // fadeIn animation
     if ($(".animation__fade-in").length) {
         $(".animation__fade-in").each(function () {
-            let current_animation = $(this);
+            let $this = $(this);
             $(this).appear(function () {
                 setTimeout(function () {
-                    current_animation.addClass("fadeIn animated").css('opacity', '1')
-                }, current_animation.data('delay'));
+                    $this.addClass("fadeIn animated").css('opacity', '1')
+                }, $this.data('delay'));
+            }, {accX: 0, accY: -150})
+        })
+    }
+
+    // fadeIn animation
+    if ($(".animation__bounce").length) {
+        $(".animation__bounce").each(function () {
+            let $this = $(this);
+            $(this).appear(function () {
+                setTimeout(function () {
+                    $this.addClass("bounce animated").css('opacity', '1')
+                }, $this.data('delay'));
             }, {accX: 0, accY: -150})
         })
     }
 
 
-    $('.Count').each(function () {
-        var $this = $(this);
-        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-            duration: 1000,
-            easing: 'swing',
-            step: function () {
-                $this.text(Math.ceil(this.Counter));
-            }
-        });
-    })
+    $('.count').each(function () {
+        let $this = $(this);
+
+        $this.appear(function () {
+            jQuery({ Counter: 0 }).animate({ Counter: $this.data('count') }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        }, {accX: 0, accY: -50})
+
+
+    });
+
+    if ($(".progress").length) {
+        $(".progress").each(function () {
+            let $this = $(this);
+            $(this).appear(function () {
+                setTimeout(function () {
+                    $this.css('width', $this.data('value'))
+                }, $this.data('delay'));
+            }, {accX: 0, accY: -150})
+        })
+    }
+
+    jarallax(document.querySelectorAll('.jarallax'), {
+        disableParallax: /iPad|iPhone|iPod|Android/,
+    });
 
 });
