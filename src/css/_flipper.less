@@ -1,12 +1,21 @@
 .flipper {
   display: flex;
   justify-content: space-between;
-  padding: 8px;
+  padding: 20px;
   border: 1px solid @main-color;
+
+  @media (min-width: 1200px) {
+    padding: 8px;
+  }
 
   .flipper__prev-img,
   .flipper__next-img {
+    display: none;
     transition: all ease-in-out 0.3s;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &__prev {
@@ -54,7 +63,10 @@
   }
 
   &__prev-txt {
-    margin-left: 40px;
+
+    @media (min-width: 1200px) {
+      margin-left: 40px;
+    }
 
     &::after {
       content: "";
@@ -71,7 +83,10 @@
   }
 
   &__next-txt {
-    margin-right: 40px;
+
+    @media (min-width: 1200px) {
+      margin-right: 40px;
+    }
 
     &::after {
       content: "";

@@ -1,6 +1,11 @@
 .gallery-arch {
-  padding-top: 180px;
-  padding-bottom: 240px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media (min-width: 1200px) {
+    padding-top: 180px;
+    padding-bottom: 240px;
+  }
 
   &__gallery-feat {
     margin-bottom: 210px;
@@ -9,7 +14,13 @@
   }
 
   &__gallery {
-    margin-left: 45px;
-    margin-right: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+
+    @media (min-width: 1200px) {
+      margin-left: 45px;
+      margin-right: 45px;
+    }
   }
 }

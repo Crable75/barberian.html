@@ -1,7 +1,16 @@
 .blog-single {
-  padding-top: 180px;
+  padding-top: 100px;
+
+  @media (min-width: 1200px) {
+    padding-top: 180px;
+  }
 
   &__wrp {
     display: flex;
+    flex-direction: column;
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
   }
 }

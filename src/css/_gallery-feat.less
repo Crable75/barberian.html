@@ -1,7 +1,10 @@
 .gallery-feat {
-  padding-left: 220px;
-  padding-right: 450px;
   position: relative;
+
+  @media (min-width: 1200px) {
+    padding-left: 220px;
+    padding-right: 450px;
+  }
 
   &__wrp {
     display: none;
@@ -16,9 +19,12 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 190px 250px 210px;
     background-color: #f6f7f5;
     min-height: 780px;
+
+    @media (min-width: 1200px) {
+      padding: 190px 250px 210px;
+    }
 
     &::after {
       content: "";
@@ -72,14 +78,24 @@
   &__img {
     width: 400px;
     height: 570px;
-    position: absolute;
-    left: 0;
-    top: 100px;
+
     transition: transform 0.5s;
 
+    @media (min-width: 1200px) {
+      position: absolute;
+      left: 0;
+      top: 100px;
+    }
+
     &--next {
-      left: auto;
-      right: 0;
+      display: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+        left: auto;
+        right: 0;
+      }
+
     }
   }
 

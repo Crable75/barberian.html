@@ -1,47 +1,80 @@
 .blog-event {
   position: relative;
   background-color: @main-color;
-  margin: 180px 45px 140px;
+  overflow: hidden;
+  margin-top: 100px;
+
+  @media (min-width: 1200px) {
+    margin: 180px 45px 0;
+  }
 
   &__img {
     width: 50%;
     height: auto;
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &__cover-wrp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-235px, -50%);
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-235px, -50%);
+    }
   }
   
   &__cover-img {
     position: relative;
+    width: 100%;
+    height: auto;
   }
 
   &__title {
     font-family: 'Prata', serif;
     color: #fff;
-    font-size: 42px;
-    line-height: 55px;
+    font-size: 30px;
+    line-height: 42px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-align: center;
+    display: block;
+    position: relative;
+    top: -20px;
+
+    @media (min-width: 1200px) {
+      font-size: 42px;
+      line-height: 55px;
+    }
   }
 
   &__title-link {
     text-decoration: none;
-    position: absolute;
-    top: calc(100% - 30px);
-    right: 120px;
+    position: relative;
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: calc(100% - 30px);
+      right: 120px;
+    }
   }
 
   &__date {
     position: absolute;
     writing-mode: vertical-rl;
     color: #fff;
-    right: -55px;
-    top: 85px;
-    letter-spacing: 0.63em;
+    right: 0;
+    top: 20px;
+    letter-spacing: 0.3em;
+
+    @media (min-width: 1200px) {
+      right: -55px;
+      top: 85px;
+      letter-spacing: 0.63em;
+    }
   }
 }
