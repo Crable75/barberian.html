@@ -195,6 +195,15 @@ $(function () {
             focusOnSelect: true,
             prevArrow: '.services__arrow--left',
             nextArrow: '.services__arrow--right',
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 1,
+                        draggable: true,
+                    }
+                }
+            ]
 
         });
     }
