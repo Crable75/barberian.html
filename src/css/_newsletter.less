@@ -5,23 +5,35 @@
 
   &__wrp {
     display: flex;
+    flex-direction: column;
     margin-bottom: 100px;
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
   }
 
   &__txt-wrp {
-    width: 45%;
-    padding-top: 85px;
-    padding-left: 75px;
+
+    @media (min-width: 1200px) {
+      width: 45%;
+      padding-top: 85px;
+      padding-left: 75px;
+    }
   }
   
   &__title {
     font-family: 'Prata', serif;
     color: #fff;
-    font-size: 40px;
+    font-size: 32px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 1;
     margin-bottom: 20px;
+
+    @media (min-width: 1200px) {
+      font-size: 40px;
+    }
   }
 
   &__subtitle {
@@ -40,12 +52,19 @@
 
   &__img-main {
     border: 14px solid #fff;
+    width: 100%;
+    height: auto;
   }
 
   &__img-right-wrp {
+    display: none;
     position: absolute;
     right: -90px;
     top: 65px;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &__img-right {
@@ -54,9 +73,14 @@
   }
 
   &__img-left-wrp {
+    display: none;
     position: absolute;
     right: -7px;
     top: 33px;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &__img-left {
@@ -66,9 +90,14 @@
 
   &__form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding-left: 25px;
     padding-right: 25px;
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__input {
