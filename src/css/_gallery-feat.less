@@ -21,12 +21,14 @@
     position: relative;
     background-color: #f6f7f5;
     min-height: 780px;
+    padding-bottom: 100px;
 
     @media (min-width: 1200px) {
       padding: 190px 250px 210px;
     }
 
     &::after {
+      display: none;
       content: "";
       position: absolute;
       width: 1px;
@@ -34,6 +36,10 @@
       background-color: @main-color;
       top: 0;
       right: 110px;
+
+      @media (min-width: 1200px) {
+        display: block;
+      }
     }
   }
   
@@ -41,10 +47,16 @@
     color: @main-color;
     font-family: 'Prata', serif;
     text-transform: uppercase;
-    font-size: 34px;
+    font-size: 28px;
     line-height: 40px;
     text-align: center;
     letter-spacing: 0.1em;
+
+    @media (min-width: 1200px) {
+      font-size: 34px;
+      line-height: 40px;
+    }
+
   }
 
   &__title-link {
@@ -76,15 +88,16 @@
   }
 
   &__img {
-    width: 400px;
-    height: 570px;
-
+    width: 100%;
+    height: auto;
     transition: transform 0.5s;
 
     @media (min-width: 1200px) {
       position: absolute;
       left: 0;
       top: 100px;
+      width: 400px;
+      height: 570px;
     }
 
     &--next {
@@ -100,7 +113,12 @@
   }
 
   &__img-link {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    overflow: hidden;
     background-color: @main-color;
+    margin-bottom: 100px;
 
     &:hover {
 
@@ -112,14 +130,24 @@
 
   &__arrow--left {
     position: absolute;
-    left: 100px;
-    top: 700px;
+    top: 620px;
+    left: 50px;
+
+    @media (min-width: 1200px) {
+      left: 100px;
+      top: 700px;
+    }
   }
 
   &__arrow--right {
     position: absolute;
-    right: 350px;
-    top: 700px;
+    top: 620px;
+    right: 50px;
+
+    @media (min-width: 1200px) {
+      right: 350px;
+      top: 700px;
+    }
   }
 
 }

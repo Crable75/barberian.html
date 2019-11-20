@@ -124,6 +124,7 @@ $(function () {
 
         $('.gallery-single__slider').slick({
             centerMode: true,
+            centerPadding: 20,
             infinite: false,
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -133,10 +134,9 @@ $(function () {
             nextArrow: '.gallery-single__arrow--right',
             responsive: [
                 {
-                    breakpoint: 1000,
+                    breakpoint: 1200,
                     settings: {
                         slidesToShow: 1,
-                        fade: true
                     }
                 }
             ]

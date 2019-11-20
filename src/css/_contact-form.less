@@ -1,13 +1,23 @@
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-bottom: 250px;
 
   &__wrp {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
   }
 
   &__img {
     display: block;
+    width: 100%;
+    height: auto;
     max-width: 555px;
   }
 
