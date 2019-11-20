@@ -197,11 +197,17 @@ $(function () {
             nextArrow: '.services__arrow--right',
             responsive: [
                 {
-                    breakpoint: 1200,
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2,
+                        draggable: true,
+                    },
+                },
+                {
+                    breakpoint: 500,
                     settings: {
                         slidesToShow: 1,
-                        draggable: true,
-                    }
+                    },
                 }
             ]
 

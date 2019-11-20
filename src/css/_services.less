@@ -1,6 +1,11 @@
 .services {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  @media (min-width: 700px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 
   @media (min-width: 1200px) {
     padding-top: 245px;
@@ -69,7 +74,7 @@
     grid-template-columns: 1fr;
     grid-row-gap: 28px;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 600px) {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -107,7 +112,6 @@
   &__arrow-wrp {
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 50px;
     display: flex;
     justify-content: space-around;
   }
@@ -126,7 +130,7 @@
     @media (min-width: 1200px) {
       position: absolute;
       top: 240px;
-      left: -80px;
+      left: 25px;
     }
   }
   
