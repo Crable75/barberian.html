@@ -1,7 +1,11 @@
 .blog {
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 75px;
+  padding-top: 75px;
 
+  @media (min-width: 700px) {
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
   @media (min-width: 1200px) {
     padding-top: 140px;
     padding-bottom: 200px;
@@ -14,6 +18,14 @@
 
     @media (min-width: 1200px) {
       flex-direction: row;
+
+      &--rev {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -48,11 +60,16 @@
 
   &__item-title {
     font-family: 'Prata', serif;
-    font-size: 32px;
-    line-height: 46px;
+    font-size: 26px;
+    line-height: 36px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 15px;
+
+    @media (min-width: 700px) {
+      font-size: 32px;
+      line-height: 46px;
+    }
   }
   
   &__item-title-link {
