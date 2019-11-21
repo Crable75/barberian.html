@@ -1,7 +1,7 @@
 .gallery-feat {
   position: relative;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1500px) {
     padding-left: 220px;
     padding-right: 450px;
   }
@@ -18,12 +18,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
     background-color: #f6f7f5;
     min-height: 780px;
     padding-bottom: 100px;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
       padding: 190px 250px 210px;
     }
 
@@ -35,9 +34,9 @@
       height: calc(100% + 110px);
       background-color: @main-color;
       top: 0;
-      right: 110px;
+      right: 560px;
 
-      @media (min-width: 1200px) {
+      @media (min-width: 1500px) {
         display: block;
       }
     }
@@ -52,7 +51,7 @@
     text-align: center;
     letter-spacing: 0.1em;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
       font-size: 34px;
       line-height: 40px;
     }
@@ -92,7 +91,7 @@
     height: auto;
     transition: transform 0.5s;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
       position: absolute;
       left: 0;
       top: 100px;
@@ -103,7 +102,7 @@
     &--next {
       display: none;
 
-      @media (min-width: 1200px) {
+      @media (min-width: 1500px) {
         display: block;
         left: auto;
         right: 0;
@@ -130,10 +129,11 @@
 
   &__arrow--left {
     position: absolute;
-    top: 620px;
+    bottom: 20px;
     left: 50px;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
+      bottom: auto;
       left: 100px;
       top: 700px;
     }
@@ -141,11 +141,12 @@
 
   &__arrow--right {
     position: absolute;
-    top: 620px;
+    bottom: 20px;
     right: 50px;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
       right: 350px;
+      bottom: auto;
       top: 700px;
     }
   }
