@@ -110,18 +110,18 @@ $(function () {
         });
     }
     // Initialise EVENTS section slider
-    // if ($('.events2__slider').length) {
-    //     $('.events2__slider').slick({
-    //         dots: false,
-    //         arrows: true,
-    //         slidesToShow: 1,
-    //         infinite: true,
-    //         prevArrow: '.events2__arrow--left',
-    //         nextArrow: '.events2__arrow--right',
-    //         fade: true,
-    //         autoplay: false,
-    //     });
-    // }
+    if ($('.events2__slider').length) {
+        $('.events2__slider').slick({
+            dots: false,
+            arrows: true,
+            slidesToShow: 1,
+            infinite: true,
+            prevArrow: '.events2__arrow--left',
+            nextArrow: '.events2__arrow--right',
+            fade: true,
+            autoplay: false,
+        });
+    }
 
     // Initialise galery-single section slider
     if ($('.gallery-single__slider').length) {
